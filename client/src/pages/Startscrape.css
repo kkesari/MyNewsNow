@@ -1,0 +1,14 @@
+.searchBtn {
+  background-color: #1dc8cd;
+  font-weight: bolder;
+}
+
+.mytitle {
+  color: #1dc8cd;
+  font-weight: bolder;
+}
+.scrollable {
+  overflow-y: auto;
+  max-height: 5%;
+  color: rgb(5, 84, 121);
+}
