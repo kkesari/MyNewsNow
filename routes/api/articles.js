@@ -108,7 +108,7 @@ router
     // });
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    scraperController.scrapeNYTimes(req.body);
+    scraperController.scrapeNYTimes(req.body.title);
 
     // // get the reddit topics and use it for comparing
     // axios.get("https://nytimes.com").then(function(response) {
