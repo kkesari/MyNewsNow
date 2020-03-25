@@ -8,7 +8,8 @@ const articlesController = require("./articlesController");
 console.log("here in teh scraperController.js in the controllers folder");
 //Defining methods for the booksController
 module.exports = {
-  scrapeReddit: function(req, res) {
+  scrapeReddit: function(title) {
+    console.log("inside scrapeReddit - req.body = " + title);
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // get the reddit topics and use it for comparing
     axios.get("https://old.reddit.com").then(function(response) {
@@ -31,10 +32,10 @@ module.exports = {
           "topic here is = " +
             topic.toUpperCase() +
             " and req body is " +
-            req.body.title.toUpperCase()
+            title.toUpperCase()
         );
 
-        if (req.body.title.toUpperCase() === topic.toUpperCase()) {
+        if (title.toUpperCase() === topic.toUpperCase()) {
           console.log("strings match " + topic);
 
           // once we have the topic match to what user has inputted, we need to pull the news here using another axios call
@@ -102,7 +103,7 @@ module.exports = {
       }
     });
   },
-  scrapeNYTimes: function(req, res) {
+  scrapeNYTimes: function(title) {
     // get the reddit topics and use it for comparing
     axios.get("https://nytimes.com").then(function(response) {
       // Load the HTML into cheerio and save it to a variable
@@ -122,11 +123,11 @@ module.exports = {
           "topic from NYTimes here is = " +
             ny_topic.toUpperCase() +
             " and req body is " +
-            req.body.title.toUpperCase()
+            title.toUpperCase()
         );
       });
 
-      if (req.body.title.toUpperCase() === ny_topic.toUpperCase()) {
+      if (title.toUpperCase() === ny_topic.toUpperCase()) {
         console.log("strings match " + ny_topic);
 
         // once we have the topic match to what user has inputted, we need to pull the news here using another axios call
