@@ -5,7 +5,7 @@
 
 .mytitle {
   color: #1dc8cd;
-  font-weight: bolder;
+  /* font-weight: bold; */
 }
 .scrollable {
   overflow-y: auto;
