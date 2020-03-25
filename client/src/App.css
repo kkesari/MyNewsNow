@@ -10,7 +10,7 @@
 }
 
 .App-header {
-  background-color: #1dc8cd;
+  background-color: #20c997;
   height: 280px;
   padding: 20px;
   color: white;
@@ -27,7 +27,7 @@
 }
 
 .myTextInput {
-  color: blue;
+  color: #777;
 }
 
 @keyframes App-logo-spin {

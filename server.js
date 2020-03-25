@@ -60,8 +60,8 @@ app.use(methodOverride('_method'))
 
 app.use(express.static(path.join(__dirname, '/public')))
 
-app.get('/', (req, res) => {
-  res.render('index.ejs', { name: req.user.name })
+app.get('/',  (req, res) => {
+  res.render('login.ejs')
 })
 
 app.get('/login', checkNotAuthenticated, (req, res) => {
@@ -99,7 +99,7 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
 
 app.delete('/logout', (req, res) => {
   req.logOut()
-  res.redirect('/login')
+  res.redirect('http://localhost:3001/login.js');
 })
 
 
